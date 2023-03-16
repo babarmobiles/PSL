@@ -1,0 +1,26 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<style>div#rmpPlayer{}.jssora12l,.jssora12r{display:block;position:absolute;width:30px;height:46px;cursor:pointer;background:url(img/a12.png) no-repeat;overflow:hidden}.jssora12l{background-position:-16px -37px}.jssora12r{background-position:-75px -37px}.jssora12l:hover{background-position:-136px -37px}.jssora12r:hover{background-position:-195px -37px}.jssora12l.jssora12ldn{background-position:-256px -37px}.jssora12r.jssora12rdn{background-position:-315px -37px}</style>
+
+<script src="https://cdn.radiantmediatechs.com/rmp/5.1.2/js/rmp-hlsjs.min.js"></script>
+
+</head>
+<body>
+
+<div id="rmpPlayer"></div> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery||document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>$(document).ready(function(){$('#form-submit').on('click',function(){var recaptcha=$("#g-recaptcha-response").val();if(recaptcha===""){event.preventDefault();alert("Please check the recaptcha");}else{$("#form-submit").attr("disabled","disabled");var name=$('#name').val();var email=$('#email').val();var phone=$('#phone').val();var country=$('#country').val();var source=$('#source').val();if(name!=""&&email!=""&&phone!=""){var myform=document.getElementById("fupForm");var fd=new FormData(myform);$.ajax({url:"https://ary-mis.com/crm/insertData.php",data:fd,cache:false,processData:false,contentType:false,type:'POST',success:function(dataofconfirm){document.getElementById("fupForm").reset();alert('Thank You For Subscription');}});}else{alert('Please fill all the field !');}}});});</script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script>var src={hls:'https://pslbackup.akamaized.net/hls/live/2098793/backuppslmatch/master.m3u8'};var schedule={preroll:'',midroll:[[120,''],[480,'']]};var settings={licenseKey:'eHp1dXRtb3Z5cEAxNDkyNDI4',src:src,autoHeightMode:true,preload:'auto',pip:false,isLive:true,muted:false,initialVolume:1,airplay:true,autoplay:true,isLive:true,hlsJSMaxBufferLength:24,hlsJSLiveSyncDuration:6,gaTrackingId:'UA-93155235-1',gaCategory:'Live Streaming',gaLabel:'PSL 8 LIVE',gaEvents:['context','ready','playerstart','error','','',''],googleCast:true,googleCastPoster:'',googleCastMetadataType:'',googleCastContentTitle:'',googleCastReceiverAppId:'F2E0CAC7',ads:false,adSchedule:schedule};var elementID='rmpPlayer';var rmp=new RadiantMP(elementID);rmp.init(settings);var lastDifferential=0;var sendingThreshold=60000;setInterval(function(){var timeViewed=rmp.getTimeViewed();if(timeViewed>0){var diff=timeViewed-lastDifferential;if(diff>=sendingThreshold){lastDifferential=timeViewed;console.log('fullminutewatched');rmp.sendGAEvent('fullminutewatched');}}},500);</script>
+<script>var didScroll;var lastScrollTop=0;var delta=5;var navbarHeight=$('header').outerHeight();$(window).scroll(function(event){didScroll=true;});setInterval(function(){if(didScroll){hasScrolled();didScroll=false;}},250);function hasScrolled(){var st=$(this).scrollTop();if(Math.abs(lastScrollTop-st)<=delta)return;if(st>lastScrollTop&&st>navbarHeight){$('header').removeClass('nav-down').addClass('nav-up');}else{if(st+$(window).height()<$(document).height()){$('header').removeClass('nav-up').addClass('nav-down');}}lastScrollTop=st;}</script>
+
+</body>
+</html>
